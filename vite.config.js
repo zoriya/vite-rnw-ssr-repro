@@ -9,10 +9,12 @@ export default defineConfig({
 		react(),
 		reactNative(),
 		cjsInterop({
-			dependencies: [
-				"inline-style-prefixer",
-				"inline-style-prefixer/**",
-			],
+			dependencies: ["inline-style-prefixer", "inline-style-prefixer/**"],
 		}),
 	],
+	ssr: {
+		optimizeDeps: {
+			include: ["react-native-web"],
+		},
+	},
 });
